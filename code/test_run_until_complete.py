@@ -14,6 +14,7 @@ class Tests(TestCase):
         garfield = cat.Cat('Garfield')
         loop = asyncio.get_event_loop()
         result = loop.run_until_complete(herd(garfield, 'forward'))
+        loop.close()
         self.assertTrue(result)
 
 
